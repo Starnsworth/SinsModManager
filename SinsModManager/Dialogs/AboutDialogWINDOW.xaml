@@ -1,0 +1,42 @@
+﻿<Window x:Class="SinsModManager.Dialogs.AboutDialogWINDOW"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SinsModManager.Dialogs"
+        mc:Ignorable="d"
+        Title="About" SizeToContent="WidthAndHeight" Background="Gainsboro">
+    <Grid Margin="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <WrapPanel HorizontalAlignment="Center">
+            <TextBlock  FontFamily="Times New Roman" FontSize="30" Text="Sins Mod Manager" VerticalAlignment="Center"/>
+        </WrapPanel>
+        <WrapPanel HorizontalAlignment="Center" Grid.Row="1">
+            <TextBlock Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Center">
+            By
+                    <Hyperlink RequestNavigate="Hyperlink_RequestNavigate" NavigateUri="http://starnsworth.com">Starnsworth</Hyperlink>
+            </TextBlock>
+            <Image Source="/img/logo.png" Width="30" />
+           
+        </WrapPanel>
+        
+        <TextBlock Grid.Row="2" TextWrapping="WrapWithOverflow" Width="400" TextAlignment="Center" >
+            This work is licensed under a
+                    <Hyperlink RequestNavigate="Hyperlink_RequestNavigate" NavigateUri="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0</Hyperlink> International License. Permissions beyond the scope of this license may be available by contacting
+                    <Hyperlink RequestNavigate="Hyperlink_RequestNavigate" NavigateUri="mailto:licencing@starnsworth.com">licencing@starnsworth.com.</Hyperlink>
+        </TextBlock>
+
+        <Image Grid.Row="3" Source="/img/cc-by-nc-sa licence.png" Stretch="None" Margin="5" />
+
+        <Button Name="btnAboutExit" Click="btnAboutExit_Click" VerticalAlignment="Bottom" HorizontalAlignment="Center" Content="Exit" Margin="3" Grid.Row="4"/>
+    </Grid>
+</Window>

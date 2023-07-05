@@ -1,0 +1,53 @@
+﻿<Window x:Class="SinsModManager.Dialogs.settingsDialogWINDOW"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SinsModManager.Dialogs"
+        mc:Ignorable="d"
+        Title="Mod Manager Settings" SizeToContent="WidthAndHeight" MinWidth="400" Background="Gainsboro" WindowStartupLocation="CenterOwner" FocusManager.FocusedElement="{Binding btnSettingsConfirm}">
+    <!--CodeBehind File is Blank-->
+    <!--TODO: Impliment Functionality of this Dialog-->
+    <Grid Margin="5" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Name="stpSettings">
+            <GroupBox>
+                <GroupBox.Header>
+                    <TextBlock Text=".exe Options" FontSize="9"/>
+                </GroupBox.Header>
+            <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Content="Sins of a Solar Empire executeable location:" FontSize="10"/>
+                <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                    <!--Below Text Box needs to be programatically updated to show the install path of the game. This Needs to happen at runtime in app.xaml.cs for referance both here and in the main screen-->
+                <TextBox  Name="tbSettingsSinsEXEloc" Margin="3" MinWidth="200" Text="C:\Program Files (x86)\Steam\Steamapps\Common\Sins of a Solar Empire Rebellion" FontSize="9" IsReadOnly="True"/>
+                    <Button Grid.Column="1" Name="btnSettingsBrowseToSinsEXE" Content="..." Width="30" Margin="3" Click="btnSettingsBrowseToSinsEXE_Click"/>
+                </Grid>
+                <WrapPanel Name="wpSettingsDevEXE" Grid.Row="2">
+                    <!--Below CheckBox sets the use of either Sins of a Solar Empire Rebellion Dev.exe or Sins of a Solar Empire Rebellion.exe this will need to be assessed programatically and utilised on the main screen.-->
+                    <!--This setting needs to be saved. Posibly selected and unselected by the active profile? Confirm Selection and create copy of current profile?-->
+                    <CheckBox  Name="cbSettingsDevEXEno" IsChecked="False" Content="Use dev.exe?" Margin="3" FontSize="9"/>
+                </WrapPanel>
+            </Grid>
+            </GroupBox>
+        </StackPanel>
+        <Button Grid.Row="1" Name="btnSettingsConfirm" Margin="3" Content="Confirm" HorizontalAlignment="Right" Padding="5,2" FontSize="9" Click="btnSettingsConfirm_Click" IsDefault="True"/>
+    </Grid>
+</Window>
